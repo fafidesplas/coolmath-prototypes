@@ -16,7 +16,8 @@ A dashboard to present the playable prototypes one by one.
 - The home shows every prototype. Press its number, or click it, to open the brief.
 - **Play** runs the game inside the page. **Next** goes to the following prototype and stops the current one.
 - On the brief: `Enter` plays, left and right arrows change prototype, `Esc` goes home. While playing, every key belongs to the game; use the top bar.
-- Link straight to one: `#groove-critters`, `#cable-calm`, `#turn-ball`, `#turn-ball/3d`, `#slowsteel`.
+- Turn Ball opens straight on its own mode menu. **Menu** in the top bar goes back to it from any mode.
+- Link straight to one: `#groove-critters`, `#cable-calm`, `#turn-ball`, `#slowsteel`.
 
 ## How it works
 

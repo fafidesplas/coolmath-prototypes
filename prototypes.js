@@ -68,52 +68,19 @@ window.PROTOTYPES = [
   },
   {
     slug: 'turn-ball',
-    focus: '50% 42%', // part of the screenshot kept in view on the home
+    focus: '50% 62%', // part of the screenshot kept in view on the home
     name: 'Turn Ball',
     kind: 'Turn-based basketball',
     accent: '#ff8a3d',
-    hook: '3x3 street hoops, one move at a time.',
-    how: [
-      'Every possession is a short chain of choices: shoot, dribble, pass or run a play.',
-      'You see the exact odds first, while the defense picks its answer without seeing yours.',
-      'Win duels to fill the fire meter and unlock signature specials.',
-    ],
-    tryFirst: 'Press Play and follow the short guided tutorial of the first match.',
+    hook: 'Turn-based hoops in several modes: 1v1 duels, a 5v5 playbook and 3x3.',
+    // Opens straight on the game's own mode menu (no brief), so new modes show up here by themselves.
+    menu: true,
     repo: 'https://github.com/fafidesplas/coolmath-turn-ball',
     versions: [
       {
-        id: 'pixel',
-        label: 'Pixel edition',
-        url: 'https://fafidesplas.github.io/coolmath-turn-ball/pixel/',
+        url: 'https://fafidesplas.github.io/coolmath-turn-ball/menu/',
         img: 'img/turn-ball.webp',
-        alt: 'Pixel-art half court with a score of 2 to 0 and the banner Score +2 next to the move menu',
-        controls: [
-          ['Click or tap', 'Pick a move, then OK'],
-          ['Arrow keys', 'Move through the menu'],
-          ['Enter, Space or Z', 'Confirm'],
-          ['Esc, Backspace or X', 'Go back'],
-          ['1 to 9', 'Pick a row, again to confirm'],
-        ],
-      },
-      {
-        id: '3d',
-        label: 'Classic 3D',
-        url: 'https://fafidesplas.github.io/coolmath-turn-ball/',
-        img: 'img/turn-ball-3d.webp',
-        alt: '3D outdoor half court seen from above with two teams of three and the four action buttons',
-        controls: [
-          ['Click or tap', 'Preview, again or GO to confirm'],
-          ['S P D C', 'Shoot, pass, drive, play'],
-          ['Q W E R', 'Techniques'],
-          ['1 to 9', 'Targets and stances'],
-          ['Enter', 'Confirm'],
-          ['Esc', 'Go back'],
-        ],
-        how: [
-          'Every possession is a short chain of choices: shoot, pass, drive or run a play.',
-          'Select any option to see its route and the exact odds, then commit.',
-          'Players level up and learn new techniques for a few equip slots.',
-        ],
+        alt: 'Pixel-art street court at dusk: a player takes a jump shot over a defender in a 1v1 duel',
       },
     ],
   },

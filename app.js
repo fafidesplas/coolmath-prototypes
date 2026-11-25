@@ -86,7 +86,8 @@
   function bar({ index, game, version }) {
     const seg = game.versions.length > 1
       ? `<div class="seg" role="group" aria-label="Version">${game.versions.map((v) => `<a class="btn" href="${link(game, v)}" aria-current="${v === version}">${esc(v.label)}</a>`).join('')}</div>` : '';
-    const inGame = playing ? `
+    const inGame = game.menu ? `
+      <button class="btn" data-do="restart" title="Back to the mode menu">${I.stop}<span>Menu</span></button>` : playing ? `
       <button class="btn" data-do="stop" title="Back to the brief">${I.stop}<span class="label">Brief</span></button>
       <button class="btn hide-s" data-do="restart" title="Reload the game">${I.restart}<span class="label">Reload</span></button>
       <button class="btn" data-do="drawer" aria-pressed="false" title="Controls">${I.keys}<span class="label">Controls</span></button>` : '';
@@ -105,13 +106,15 @@
 
   function renderGame(r) {
     const { game, version } = r;
+    if (game.menu) playing = true;
     document.title = `${game.name} · Game prototypes`;
     const how = version.how || game.how;
     const note = game.note ? `<p class="try">${esc(game.note)}</p>` : '';
+    const drawer = version.controls ? `<aside class="drawer" hidden aria-label="Controls"><h2 class="wide">Controls</h2>${controls(version)}${note}</aside>` : '';
     const body = playing ? `
       <section class="stage">
         <div class="loading"><p>Loading ${esc(game.name)}…</p></div>
-        <aside class="drawer" hidden aria-label="Controls"><h2 class="wide">Controls</h2>${controls(version)}${note}</aside>
+        ${drawer}
       </section>` : `
       <main class="brief">
         <div class="pitch">
